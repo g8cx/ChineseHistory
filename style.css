@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+.header {
+  padding: 20px 60px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #9b3a2b;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: #9b3a2b;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 70vh;
+  text-align: center;
+  padding: 140px 20px 120px;
+  background:
+    linear-gradient(rgba(246, 241, 231, 0.5), rgba(246, 241, 231, 0.7)),
+    url("images/bg-mountains.png");
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 80px 100px;
+}
+
+.card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid #e3d7c6;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.card-btn {
+  text-decoration: none;
+  color: #9b3a2b;
+  font-weight: 500;
+}
+
+.timeline {
+  background: #efe6d8;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.timeline h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.timeline-bar {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding-top: 10px;
+  border-top: 2px solid #9b3a2b;
+}
+
+.timeline-bar span {
+  font-weight: 500;
+  color: #9b3a2b;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #9b3a2b;
+  color: #9b3a2b;
+  padding: 12px 26px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+.fade-out {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+.emperor-page {
+  min-height: 100%;
+background: linear-gradient(
+    rgba(246,241,231,0.3),
+    rgba(246,241,231,0.3)
+  ),
+  url('images/bg-emperor.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding-top: 100px;
+}
+
+.emperor-page .emperor {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.emperor-page .emperor.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.emperor-page .emperor h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.emperor-page .emperor p {
+  font-size: 16px;
+  color: #444;
+}
+.emperor-page .portrait {
+  display: block;
+  width: 220px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.emperor-page .back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: 2px solid #9b3a2b;
+  color: #9b3a2b;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.emperor-page .emperor::after {
+  content: "Нажмите, чтобы продолжить →";
+  display: block;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #9b3a2b;
+  opacity: 0.7;
+}
+
+.emperor-page .emperor,
+.emperor-page .emperor * {
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dynasty-page {
+  background: #f6f1e7;
+}
+
+.dynasty-hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background:
+    linear-gradient(rgba(246,241,231,0.7), rgba(246,241,231,0.9)),
+    url("images/bg-emperor.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.dynasty-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.dynasty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+}
+
+.dynasty-card {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #e3d7c6;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dynasty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dynasty-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.dynasty-card span {
+  font-size: 14px;
+  color: #9b3a2b;
+}
+
+.dynasty-card p {
+  margin: 14px 0 18px;
+  font-size: 15px;
+}

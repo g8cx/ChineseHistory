@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Императоры Древнего Китая</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <div class="logo">帝</div>
+    <ul class="menu">
+      <li><a href="dinasties.html">О династиях</a></li>
+      <li><a href="chronology.html">Хронология</a></li>
+      <li><a href="library.html">Галерея</a></li>
+    </ul>
+    <button class="btn-primary" id="startJourney">Начать путешествие</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Императоры Древнего Китая</h1>
+  <p class="subtitle">Интерактивная история древнего Китая</p>
+</section>
+
+<section class="features">
+  <div class="card">
+    <h3>Исследуйте династии</h3>
+    <p>Узнайте о великих правителях и эпохах Китая</p>
+    <a href="chronology.html" class="card-btn">Подробнее</a>
+  </div>
+
+  <div class="card">
+    <h3>Лента времени</h3>
+    <p>Хронология правления императоров</p>
+    <a href="chronology.html" class="card-btn">Подробнее</a>
+  </div>
+
+  <div class="card">
+    <h3>Коллекция артефактов</h3>
+    <p>Сокровища и реликвии древнего Китая</p>
+    <a href="artifacts.html" class="card-btn">Подробнее</a>
+  </div>
+</section>
+
+<section class="timeline">
+  <h2>Эпохи китайских императоров</h2>
+  <div class="timeline-bar">
+    <span>Цинь</span>
+    <span>Хань</span>
+    <span>Тан</span>
+    <span>Мин</span>
+  </div>
+  <button class="btn-secondary" id="deepHistory">Погрузиться в историю</button>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Интерактивная история Древнего Китая</p>
+</footer>
+
+<script>
+  const startBtn = document.getElementById("startJourney");
+  const historyBtn = document.getElementById("deepHistory");
+
+  function goToEmperors() {
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = "emperor.html";
+    }, 800);
+  }
+
+  startBtn.addEventListener("click", goToEmperors);
+  historyBtn.addEventListener("click", goToEmperors);
+</script>
+
+</body>
+</html>

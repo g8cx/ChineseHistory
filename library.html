@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Хронология династий Китая</title>
+
+  <link rel="stylesheet" href="slideshow.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<button class="back" id="backBtn">← На главную</button>
+
+<div class="slider">
+
+  <div class="slide active" style="background-image:url('images/bg-zin.png')">
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-xan.png')">
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-emperor.png')">
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-min.png')">
+  </div>
+
+    <div class="slide" style="background-image:url('images/wall.png')">
+  </div>
+
+    <div class="slide" style="background-image:url('images/chram.png')">
+  </div>
+
+    <div class="slide" style="background-image:url('images/wow.png')">
+  </div>
+
+  <button class="nav-btn prev">❮</button>
+  <button class="nav-btn next">❯</button>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  const backBtn = document.getElementById('backBtn');
+
+  let index = 0;
+
+  function show(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  next.onclick = () => {
+    index = (index + 1) % slides.length;
+    show(index);
+  };
+
+  prev.onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    show(index);
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') next.click();
+    if (e.key === 'ArrowLeft') prev.click();
+  });
+
+  backBtn.addEventListener('click', () => {
+    window.location.href = 'Main.html';
+  });
+</script>
+
+</body>
+</html>

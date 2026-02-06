@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Хронология династий Китая</title>
+
+  <link rel="stylesheet" href="slideshow.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<button class="back" id="backBtn">← На главную</button>
+
+<div class="slider">
+
+  <div class="slide active" style="background-image:url('images/bg-zin.png')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Династия Цинь</h1>
+      <div class="years">221–206 гг. до н.э.</div>
+      <p>Первая империя объединённого Китая. Созданы единые законы, письменность и начато строительство Великой стены.</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-xan.png')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Династия Хань</h1>
+      <div class="years">206 г. до н.э. – 220 г. н.э.</div>
+      <p>Период расцвета науки, торговли и открытия Шёлкового пути. Конфуцианство стало основой государства.</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-emperor.png')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Династия Тан</h1>
+      <div class="years">618–907 гг.</div>
+      <p>Золотой век китайской культуры, поэзии и международной торговли.</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('images/bg-min.png')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Династия Мин</h1>
+      <div class="years">1368–1644 гг.</div>
+      <p>Строительство Запретного города и восстановление китайского правления после монголов.</p>
+    </div>
+  </div>
+
+  <button class="nav-btn prev">❮</button>
+  <button class="nav-btn next">❯</button>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  const backBtn = document.getElementById('backBtn');
+
+  let index = 0;
+
+  function show(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  next.onclick = () => {
+    index = (index + 1) % slides.length;
+    show(index);
+  };
+
+  prev.onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    show(index);
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') next.click();
+    if (e.key === 'ArrowLeft') prev.click();
+  });
+
+  backBtn.addEventListener('click', () => {
+    window.location.href = 'Main.html';
+  });
+</script>
+
+</body>
+</html>
